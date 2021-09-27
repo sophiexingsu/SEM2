@@ -477,7 +477,7 @@ class RecurrentLinearEvent(LinearEvent):
     # RNN which is initialized once and then trained using stochastic gradient descent
     # i.e. each new scene is a single example batch of size 1
 
-    def __init__(self, d, var_df0=None, var_scale0=None, t=3,
+    def __init__(self, d, var_df0=None, var_scale0=None, t=10,
                  optimizer=None, n_epochs=10, l2_regularization=0.00, batch_size=32,
                  kernel_initializer='glorot_uniform', init_model=False, prior_log_prob=None, reset_weights=False,
                  batch_update=True, optimizer_kwargs=None,variance_prior_mode=None, 
@@ -653,7 +653,7 @@ class RecurrentLinearEvent(LinearEvent):
 
 class RecurrentEvent(RecurrentLinearEvent):
 
-    def __init__(self, d, var_df0=None, var_scale0=None, t=3, n_hidden=None, optimizer=None,
+    def __init__(self, d, var_df0=None, var_scale0=None, t=10, n_hidden=None, optimizer=None,
                  n_epochs=10, dropout=0.50, l2_regularization=0.00, batch_size=32,
                  kernel_initializer='glorot_uniform', init_model=False, prior_log_prob=None, reset_weights=False, 
                  batch_update=True, optimizer_kwargs=None, variance_prior_mode=None,variance_window=None):
@@ -691,7 +691,7 @@ class RecurrentEvent(RecurrentLinearEvent):
 
 class GRUEvent(RecurrentLinearEvent):
 
-    def __init__(self, d, var_df0=None, var_scale0=None, t=3, n_hidden=None, optimizer=None,
+    def __init__(self, d, var_df0=None, var_scale0=None, t=10, n_hidden=None, optimizer=None,
                  n_epochs=10, dropout=0.50, l2_regularization=0.00, batch_size=32,
                  kernel_initializer='glorot_uniform', init_model=False, prior_log_prob=None, reset_weights=False,
                  batch_update=True, optimizer_kwargs=None,variance_prior_mode=None,variance_window=None):
@@ -778,7 +778,7 @@ class GRUEvent_spherical_noise(GRUEvent):
 
 class LSTMEvent(RecurrentLinearEvent):
 
-    def __init__(self, d, var_df0=None, var_scale0=None, t=3, n_hidden=None, optimizer=None,
+    def __init__(self, d, var_df0=None, var_scale0=None, t=10, n_hidden=None, optimizer=None,
                  n_epochs=10, dropout=0.50, l2_regularization=0.00,
                  batch_size=32, kernel_initializer='glorot_uniform', init_model=False, prior_log_prob=None,
                  reset_weights=False, batch_update=True, optimizer_kwargs=None, variance_prior_mode=None,
